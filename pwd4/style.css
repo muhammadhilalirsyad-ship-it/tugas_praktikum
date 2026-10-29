@@ -1,0 +1,87 @@
+/* Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Halaman */
+header {
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Konten Halaman (Ketentuan 1: Kedalaman > 2000px) */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.dummy-content {
+    background: white;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    min-height: 600px; /* Membuat tinggi konten besar */
+}
+
+.dummy-content h2 {
+    color: #4f46e5;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+/* Tombol Kembali ke Atas (Ketentuan 2 & 3) */
+#btnBackToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    
+    /* Awalnya disembunyikan */
+    opacity: 0;
+    visibility: hidden; 
+}
+
+/* Ketika tombol aktif/muncul setelah scroll > 500px */
+#btnBackToTop.show {
+    visibility: visible;
+    opacity: 0.5; /* Nilai opacity 50% agar tidak mengganggu konten */
+}
+
+/* Efek Hover (Ketentuan 3) */
+#btnBackToTop.show:hover {
+    opacity: 1; /* Opacity menjadi 100% saat di-hover */
+    transform: translateY(-5px); /* Efek animasi sedikit naik */
+    background-color: #3730a3;
+}
